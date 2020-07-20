@@ -36,8 +36,10 @@
 
 	<positions>
 		<position>navbar</position>
+		<position>lang-switcher</position>
 		<position>breadcrumbs</position>
 		<position>sidebar</position>
+		<position>footer</position>
 		<position>debug</position>
 	</positions>
 
