@@ -20,6 +20,7 @@ $theme-colors: ();
 $theme-colors: map-merge(
   (
     "white": $white,
+    "text": $text-color,
   ),
   $theme-colors
 );

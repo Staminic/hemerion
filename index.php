@@ -17,7 +17,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         <jdoc:include type="head" />
     </head>
 
-    <body class="<?php echo $active->alias . ' ' . $pageclass; ?>">
+    <body <?php echo ($pageclass ? 'class="' . $pageclass . '"' : ""); ?>>
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRC2N55"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -26,15 +26,29 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         <header>
             <nav class="navbar">
                 <a class="navbar-brand" href="/">
+                <?php if( $pageclass == 'onepage' ) : ?>
                     <img src="images/hemerion-logo-white.svg" alt="logo d'hemerion" class="img-fluid" width="345"/>
+                <?php else : ?>
+                    <img src="images/hemerion-logo.svg" alt="logo d'hemerion" class="img-fluid" width="345"/>
+                <?php endif; ?>
                 </a>
                 
                 <jdoc:include type="modules" name="lang-switcher" />
             </nav>
         </header>
 
-        <main>
-            <jdoc:include type="component" />
+        <main> 
+            <?php if( $pageclass == 'onepage' ) : ?>
+                <jdoc:include type="component" />
+            <?php else :?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <jdoc:include type="component" />
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </main>
 
         <footer>
@@ -42,7 +56,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         </footer>
 
         <jdoc:include type="modules" name="debug" />
-        <script src="templates/frontend/build/app.js"></script>
+        <script src="templates/hemerion/build/app.js"></script>
 
     </body>
 </html>

@@ -21,10 +21,16 @@ h3,
 
 // HEADER
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  margin-bottom: $spacer * 3;
+}
+
+.onepage {
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -42,6 +48,14 @@ header {
 
   a {
     padding: $spacer / 4;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid $text-color;
+    color: $text-color;
+  }
+}
+
+.onepage {
+  .mod-languages a {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid $white;
     color: $white;
@@ -177,4 +191,8 @@ footer {
       background-color: #c30041;
     }
   }
+}
+
+.item-page {
+  padding-bottom: $spacer * 3;
 }
