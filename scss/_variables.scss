@@ -16,11 +16,16 @@ $cyan: #17a2b8;
 $text-color: #434342;
 $white: #ffffff;
 
+$primary: #009cdf;
+$secondary: #c30041;
+
 $theme-colors: ();
 $theme-colors: map-merge(
   (
     "white": $white,
     "text": $text-color,
+    "primary": $primary,
+    "secondary": $secondary,
   ),
   $theme-colors
 );
